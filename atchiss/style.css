@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+*{margin:0;
+ padding:0;
+ 
+ }
+h1{font-family: "Press Start 2P", system-ui;color:white;}
+ul {
+  display: block;
+  background-color:#db810d;
+  width: 550px;height:400px;
+  
+  padding: 20px; 
+  list-style: none; margin: 0 auto; margin-top:20px;
+}
+
+li {
+  display: flex;         
+  justify-content: center; 
+  align-items: center;
+  margin-bottom: 10px;   
+}
+img{border-radius:10px;
+   width:250px;}
+button{border:1px solid black}
+
+
+button{color:#eddac2;padding:8px;border-radius:3px;background:#f2a129;border:2px solid #c67913; box-shadow:2px 2px 0px 0px #8e4e12;}
+button :activate{transform:scale(0.5)}
+button:hover{animation: shaking 0.3s linear 2;}
+@keyframes shaking {
+            0%, 50%, 100% {
+                transform: rotate(0deg);
+            }
+            20% {
+                transform: rotate(-5deg);
+            }
+            70% {
+                transform: rotate(2deg);
+            }
+        }
