@@ -55,3 +55,53 @@ setInterval(() => {
     }
 }, 60000); // cada minuto
 ```
+
+**Guardas la fecha exacta de la cita**
+
+```js
+function programarRecordatorioVacuna(fechaCita) {
+    const fechaObjetivo = new Date(fechaCita).getTime();
+    localStorage.setItem('recordatorioVacuna', fechaObjetivo);
+
+    verificarRecordatorio(); // por si ya toca
+}
+
+// Verifica si ya es momento de notificar
+function verificarRecordatorio() {
+    const objetivo = localStorage.getItem('recordatorioVacuna');
+    if (!objetivo) return;
+
+    const ahora = Date.now();
+
+    if (ahora >= objetivo) {
+        crearNotificacion();
+        localStorage.removeItem('recordatorioVacuna');
+    }
+}
+
+// Revisa cada minuto
+setInterval(verificarRecordatorio, 60000);
+```
+*_Opcional_*
+function crearNotificacion() {
+    if (Notification.permission === "granted") {
+        new Notification("💉 Recordatorio de vacuna", {
+            body: "Tienes una cita programada",
+        });
+    } else {
+        Notification.requestPermission();
+    }
+}
+
+**_Solo funciona si la página está abierta _**
+
+**_Bonus útil_**
+
+Puedes mejorar el recordatorio avisando antes:
+```js
+
+const avisoPrevio = 24 * 60 * 60 * 1000; // 1 día antes
+const fechaAviso = fechaObjetivo - avisoPrevio;
+
+```js
+
