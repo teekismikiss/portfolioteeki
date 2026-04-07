@@ -6,7 +6,7 @@ setTimeout(() => {
 }, segundos * 1000);
 ```
 
-##Convertir a días, semanas o meses
+## Convertir a días, semanas o meses
 
 **Días**
 ```js
