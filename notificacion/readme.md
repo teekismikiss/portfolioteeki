@@ -1,4 +1,4 @@
-cómo cambiar  el tiempo en el código siguiente:
+*__Cómo cambiar  el tiempo en el código siguiente:__*
 
 ```js
 setTimeout(() => {
@@ -8,33 +8,38 @@ setTimeout(() => {
 
 ##Convertir a días, semanas o meses
 
-✅ Días
+**Días**
 ```js
 setTimeout(() => {
     crearNotificacion();
 }, dias * 24 * 60 * 60 * 1000);
 ```
 
-✅ Semanas
+**Semanas**
 ```js
 setTimeout(() => {
     crearNotificacion();
 }, semanas * 7 * 24 * 60 * 60 * 1000);
-```js
+```
 
-✅ Meses (aproximado)
+**Meses**
+
+
 ```js
 setTimeout(() => {
     crearNotificacion();
 }, meses * 30 * 24 * 60 * 60 * 1000);
 ```
-⚠️ Ojo importante
+ **_Ojo importante_**
+
 setTimeout no es fiable para tiempos tan largos (días/semanas/meses).
 Puede fallar si:
-el navegador se cierra
-el usuario recarga la página
-el sistema entra en reposo
-💡 Alternativa más robusta
++ el navegador se cierra
++ el usuario recarga la página
++ el sistema entra en reposo
+
+
+**Alternativa más robusta**
 
 Para tiempos largos, es mejor:
 
